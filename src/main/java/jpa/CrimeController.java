@@ -24,15 +24,17 @@ public class CrimeController extends HttpServlet {
         } else if (action.equals("incluir")) {
             criarCrime(request, response);
         } else if(action.equals("consultar")) {
-        	
+        	consultarCrime(request, response);
         }
 	}
 	
-	protected Crime consultarCrime(HttpServletRequest req, HttpServletResponse resp) {
+	protected void consultarCrime(HttpServletRequest req, HttpServletResponse resp) {
 		String email = req.getParameter("inputEmail");
 		String senha = req.getParameter("inputSenha");
 		Crime crime = CrimeDao.consultar(email, senha);
-		return crime;
+		req.setAttribute("inputTipo", crime.getTipo());
+		req.setAttribute("inputArma", crime.getArma());
+		req.setAttribute("inputDesc", crime.getDescricao());
 	}
 	protected void criarCrime(HttpServletRequest req, HttpServletResponse resp)  {
 			String msg;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<% import  %>
+
 <html>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
 	<head>
@@ -31,7 +31,7 @@
 	  					<h2>Digite seu e-mail e senha:</h2>
 	  					<div class="form-group">
 	  						<label for="inputEmail">E-mail:</label>
-	  						<input type="text" class="form-control" name="inputEmail" id="inputEmail" placeholder="exemplo@exemplo.com" required></input>
+	  						<input type="email" class="form-control" name="inputEmail" id="inputEmail" placeholder="exemplo@exemplo.com" required></input>
 	  					</div>	
 	  					<div class="form-group">
     						<label for="inputSenha">Senha:</label>
@@ -43,9 +43,7 @@
 	  			<button type="submit" class="btn btn-default">Consultar</button>
 	  		</div>
 		</form>
-		<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAj52QyarTITdWWlepopNkM__T4huzT7Mw&callback=initMap">
-    </script>
+		
 		<script type="text/javascript" src="js/googleMaps.js"></script>	
     	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>

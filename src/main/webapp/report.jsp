@@ -28,13 +28,14 @@
 			<div class="container">
 				<div class="card">
 	  				<div class="card-body">
+	  					<h2>Digite seu e-mail e crie uma senha:</h2>
 	  					<div class="form-group">
 	  						<label for="inputEmail">E-mail:</label>
-	  						<input type="text" ame="inputEmail" id="inputEmail" required></input>
+	  						<input class="form-control" type="email" name="inputEmail" id="inputEmail" placeholder="exemplo@exemplo.com" required></input>
 	  					</div>	
 	  					<div class="form-group">
     						<label for="inputSenha">Senha:</label>
-    						<input type="password" name="inputSenha" id="inputSenha" required></input>
+    						<input class="form-control" type="password" name="inputSenha" id="inputSenha" placeholder="Digite sua senha" required></input>
   						</div>
 	  					<h2>Informações do crime:</h2>
 	  					<div class="form-row">
@@ -63,7 +64,7 @@
   	  				</div>
 	  			</div>
 	  			<h1></h1>
-	  			<button type="submit" class="btn btn-default">Enviar</button>
+	  			<button type="submit" class="btn btn-default" href="index.html">Enviar</button>
 	  		</div>
 		</form>
 		<script async defer
