@@ -2,6 +2,7 @@ package jpa;
 
 import java.io.IOException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,13 +17,15 @@ public class CrimeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private void processarRequisicao(HttpServletRequest request,
-            HttpServletResponse response) throws ServletException {
+            HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		 
         if (action == null) {
             throw new ServletException("No action specified.");
         } else if (action.equals("incluir")) {
             criarCrime(request, response);
+            RequestDispatcher r = request.getRequestDispatcher( "report.jsp" );
+            r.forward( request, response );
         } else if(action.equals("consultar")) {
         	consultarCrime(request, response);
         }
