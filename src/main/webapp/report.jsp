@@ -14,14 +14,14 @@
   			</button>
   			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     			<div class="navbar-nav">
-      				<a class="nav-item nav-link" href="index.html">Página inicial <span class="sr-only">(current)</span></a>
-      				<a class="nav-item nav-link active" href="report.jsp">Reportar crime</a>
-      				<a class="nav-item nav-link active" href="ConsultarCrime.jsp">Consultar crime</a>
+      				<a class="nav-item nav-link" href="index.html">Página inicial </a>
+      				<a class="nav-item nav-link active" href="report.jsp">Reportar crime <span class="sr-only">(current)</span></a>
+      				<a class="nav-item nav-link" href="ConsultarCrime.jsp">Consultar crime</a>
     			</div>
   			</div>
 		</nav>
 		<!-- Fim da navbar -->
-		
+		<br>
 		<!-- Começo do formulário -->
 		<form action="CrimeController?action=incluir" role="form" method="POST">
 			<div class="container">
@@ -55,6 +55,18 @@
 	  								<option>Fogo</option>
 	  							</select>
 	  						</div>
+	  						<div class="form-group col-md-4">
+	  							<label for="inputRegiao">Arma</label>
+	  							<select name="inputRegiao" id="inputRegiao" class="form-control" required>
+	  								<option>Central</option>
+	  								<option>Norte</option>
+	  								<option>Noroeste</option>
+	  								<option>Oeste</option>
+	  								<option>Sudeste</option>
+	  								<option>Sudoeste</option>
+	  								<option>Sul</option>
+	  							</select>
+	  						</div>
 	  					</div>
 	  					<div class="form-group">
     						<label for="inputDesc">Descreva o delito:</label>
@@ -63,9 +75,10 @@
   	  				</div>
 	  			</div>
 	  			<h1></h1>
-	  			<button type="submit" class="btn btn-default" href="index.html">Enviar</button>
+	  			<button type="submit" class="btn btn-default" href="report.jsp">Enviar</button>
 	  		</div>
 		</form>
+		<br>
 		<div class="container">
 			<div class="alert alert-primary" role="alert">
   				${msg}

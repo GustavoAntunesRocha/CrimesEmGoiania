@@ -1,7 +1,11 @@
+<%@page import="jpa.CrimeDao"%>
 <html>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link rel="stylesheet" href="ammap/ammap.css" type="text/css" media="all" />
   <head>
+  	<%
+  		CrimeDao.crimeToJson();
+  	%>
   	<title>Crimes em Goiânia</title>
         <meta name="viewport" content="width=device-width">
     </head>
@@ -13,9 +17,9 @@
   			</button>
   			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     			<div class="navbar-nav">
-      				<a class="nav-item nav-link active" href="index.html">Página inicial <span class="sr-only">(current)</span></a>
+      				<a class="nav-item nav-link active" href="index.jsp">Página inicial <span class="sr-only">(current)</span></a>
       				<a class="nav-item nav-link" href="report.jsp">Reportar crime</a>
-      				<a class="nav-item nav-link" href="teste.xhtml">Teste</a>
+      				<a class="nav-item nav-link active" href="ConsultarCrime.jsp">Consultar crime</a>
     			</div>
   			</div>
 		</nav>

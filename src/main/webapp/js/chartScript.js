@@ -1,30 +1,30 @@
 var chartData = [ {
-    "country": "GO-CENTRAL",
+    "country": "CENTRAL",
     "crimes": 4252
   }, {
-    "country": "GO-SUDESTE",
+    "country": "SUDESTE",
     "crimes": 1882
   }, {
-    "country": "GO-NORTE",
+    "country": "NORTE",
     "crimes": 1809
   }, {
-    "country": "GO-NORTE",
+    "country": "NORTE",
     "crimes": 1322
   }, {
-    "country": "GO-SUDOESTE",
+    "country": "SUDOESTE",
     "crimes": 1122
   }, {
-    "country": "GO-OESTE",
+    "country": "OESTE",
     "crimes": 1114
   }, {
-    "country": "GO-NOROESTE",
+    "country": "NOROESTE",
     "crimes": 984
   }
   ];
 
 AmCharts.makeChart( "chartdiv", {
 	  "type": "serial",
-	  "dataProvider": chartData,
+	  "dataProvider": CrimeDao.crimeToJson(),
 	  "categoryField": "country",
 	  "graphs": [ {
 		    "valueField": "crimes",

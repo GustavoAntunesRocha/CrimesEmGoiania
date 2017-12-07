@@ -28,16 +28,23 @@ public class CrimeController extends HttpServlet {
             r.forward( request, response );
         } else if(action.equals("consultar")) {
         	consultarCrime(request, response);
+        	RequestDispatcher r = request.getRequestDispatcher( "ConsultarCrime.jsp" );
+            r.forward( request, response );
+        } else if(action.equals("excluir")) {
+        	excluirCrime(request, response);
+        	RequestDispatcher r = request.getRequestDispatcher( "ConsultarCrime.jsp" );
+            r.forward( request, response );
         }
 	}
 	
+	protected void excluirCrime(HttpServletRequest req, HttpServletResponse resp) {
+		int id = Integer.parseInt(req.getParameter("id"));
+		CrimeDao.excluir(id);
+	}
 	protected void consultarCrime(HttpServletRequest req, HttpServletResponse resp) {
 		String email = req.getParameter("inputEmail");
 		String senha = req.getParameter("inputSenha");
-		Crime crime = CrimeDao.consultar(email, senha);
-		req.setAttribute("inputTipo", crime.getTipo());
-		req.setAttribute("inputArma", crime.getArma());
-		req.setAttribute("inputDesc", crime.getDescricao());
+		req.setAttribute("crimes", CrimeDao.consultar(email, senha));
 	}
 	protected void criarCrime(HttpServletRequest req, HttpServletResponse resp)  {
 			String msg;
@@ -46,8 +53,9 @@ public class CrimeController extends HttpServlet {
 			String descricao = req.getParameter("inputDesc");
 			String email = req.getParameter("inputEmail");
 			String senha = req.getParameter("inputSenha");
+			String regiao = req.getParameter("inputRegiao");
 			
-			CrimeDao.inclui(tipo, arma, descricao, email, senha);
+			CrimeDao.inclui(tipo, arma, descricao, email, senha, regiao);
 			msg = "Inclusão realizada com sucesso.";
 			req.setAttribute("msg", msg);
 			
